@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/wrangler/config-schema.json",
-  "name": "test",
+  "name": "subboost-edge",
   "main": "worker/index.ts",
   "compatibility_date": "2026-02-07",
   "vars": {
@@ -17,12 +17,12 @@
   "kv_namespaces": [
     {
       "binding": "SUB_KV",
-      "id": "58db6bee88a44a19a9457a465d6eb693"
+      "id": "aa361aef9c6e4f92bda3ca88d0359903"
     }
   ],
   // Must name this Worker itself: each scheduled refresh then runs in its
   // own invocation with its own CPU budget instead of sharing the cron's.
-  "services": [{ "binding": "SELF", "service": "test" }],
+  "services": [{ "binding": "SELF", "service": "subboost-edge" }],
   "durable_objects": {
     "bindings": [{ "name": "SUB_STORE", "class_name": "SubscriptionStore" }]
   },
